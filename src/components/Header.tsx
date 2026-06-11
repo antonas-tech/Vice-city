@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Phone, X } from "lucide-react";
+import { Menu, Phone, ShieldCheck, X } from "lucide-react";
 import { CLUB, NAV_LINKS } from "../data/site";
+import { AdminLoginModal } from "../admin/AdminLoginModal";
 import { Button } from "./Button";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
   const [active, setActive] = useState("#hero");
 
   useEffect(() => {
@@ -89,6 +91,15 @@ export function Header() {
             <Phone className="h-4 w-4 text-neon-cyan" />
             {CLUB.phone}
           </a>
+          <button
+            type="button"
+            onClick={() => setLoginOpen(true)}
+            aria-label="Вход для администратора"
+            className="glass flex h-10 items-center gap-2 rounded-xl px-3.5 text-sm font-semibold text-slate-400 transition-all duration-300 hover:border-neon-purple/50 hover:text-neon-purple hover:shadow-glow-purple"
+          >
+            <ShieldCheck className="h-4 w-4" />
+            Administrator
+          </button>
           <Button href="#booking" size="md" magnetic>
             Забронировать
           </Button>
@@ -173,10 +184,25 @@ export function Header() {
                   <Phone className="h-4 w-4" />
                   {CLUB.phone}
                 </Button>
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setLoginOpen(true);
+                  }}
+                >
+                  <ShieldCheck className="h-4 w-4 text-neon-purple" />
+                  Administrator
+                </Button>
               </motion.div>
             </motion.nav>
           </motion.div>
         )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {loginOpen && <AdminLoginModal onClose={() => setLoginOpen(false)} />}
       </AnimatePresence>
     </header>
   );

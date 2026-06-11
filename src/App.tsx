@@ -1,7 +1,9 @@
+import { AdminApp } from "./admin/AdminApp";
 import { FloatingCTA } from "./components/FloatingCTA";
 import { GameTicker } from "./components/GameTicker";
 import { Header } from "./components/Header";
 import { ScrollProgress } from "./components/ScrollProgress";
+import { useHashRoute } from "./hooks/useHashRoute";
 import { Booking } from "./sections/Booking";
 import { Contacts } from "./sections/Contacts";
 import { Faq } from "./sections/Faq";
@@ -15,6 +17,12 @@ import { WhyUs } from "./sections/WhyUs";
 import { Zones } from "./sections/Zones";
 
 export default function App() {
+  const route = useHashRoute();
+
+  if (route.startsWith("#/admin")) {
+    return <AdminApp />;
+  }
+
   return (
     <div className="relative overflow-x-clip">
       <ScrollProgress />
