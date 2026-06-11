@@ -1,7 +1,8 @@
 import { useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CalendarCheck, CheckCircle2, Phone, Send } from "lucide-react";
-import { BOOKING_PACKAGES, CLUB, ZONES } from "../data/site";
+import { BOOKING_PACKAGES, CLUB, ZONES, type ZoneId } from "../data/site";
+import { addBooking } from "../store/clubStore";
 import { Button } from "./Button";
 
 type FormState = {
@@ -56,7 +57,20 @@ export function BookingForm() {
     if (!form.date) next.date = "Выберите дату";
     if (!form.time) next.time = "Выберите время";
     setErrors(next);
-    if (Object.keys(next).length === 0) setSubmitted(true);
+    if (Object.keys(next).length === 0) {
+      // заявка попадает в панель администратора (localStorage)
+      addBooking({
+        name: form.name.trim(),
+        phone: form.phone,
+        zone: form.zone as ZoneId,
+        guests: form.guests,
+        date: form.date,
+        time: form.time,
+        pack: form.pack,
+        comment: form.comment.trim(),
+      });
+      setSubmitted(true);
+    }
   };
 
   return (
