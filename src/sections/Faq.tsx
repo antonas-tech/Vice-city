@@ -9,7 +9,7 @@ export function Faq() {
         <SectionTitle
           eyebrow="FAQ"
           title="Частые вопросы"
-          subtitle="Все, что нужно знать перед визитом в Vice City Adler."
+          subtitle="Все, что нужно знать перед визитом в Topzol Adler."
         />
         <FAQAccordion items={FAQ} />
       </div>

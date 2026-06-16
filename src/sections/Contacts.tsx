@@ -114,7 +114,7 @@ export function Contacts() {
                   <MapPin className="h-6 w-6 text-white" />
                 </span>
                 <p className="mt-3 whitespace-nowrap text-center font-display text-sm font-bold text-white">
-                  Vice City Adler
+                  Topzol Adler
                 </p>
                 <p className="whitespace-nowrap text-center text-xs text-slate-400">
                   ул. Бестужева 1/1, 2 этаж

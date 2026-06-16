@@ -12,7 +12,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <p className="font-display text-xl font-bold text-white">
-              VICE<span className="text-gradient"> CITY</span> ADLER
+              TOP<span className="text-gradient">ZOL</span> ADLER
             </p>
             <p className="mt-1 text-xs font-medium uppercase tracking-[0.3em] text-slate-500">
               Gaming Club · Adler · 24/7
@@ -59,7 +59,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/5 pt-6 sm:flex-row">
           <p className="text-xs text-slate-600">
-            © {new Date().getFullYear()} Vice City Adler. Все права защищены.
+            © {new Date().getFullYear()} Topzol Adler. Все права защищены.
           </p>
           <p className="text-xs tracking-wide text-slate-600">
             Designed for premium gaming experience

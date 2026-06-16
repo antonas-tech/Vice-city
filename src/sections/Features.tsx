@@ -17,7 +17,7 @@ export function Features() {
           eyebrow="Преимущества"
           title={
             <>
-              Почему <span className="text-gradient">Vice City Adler</span>?
+              Почему <span className="text-gradient">Topzol Adler</span>?
             </>
           }
           subtitle="Мощное железо, курортная атмосфера и сервис, ради которого возвращаются."

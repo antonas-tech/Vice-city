@@ -14,7 +14,7 @@ export function WhyUs() {
       <div className="mx-auto max-w-7xl">
         <Reveal className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="font-display text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-            Vice City — больше, чем{" "}
+            Topzol — больше, чем{" "}
             <span className="text-gradient">компьютерный клуб</span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-slate-400 md:text-lg">
@@ -36,7 +36,7 @@ export function WhyUs() {
 
         <Reveal className="mb-8 text-center">
           <h3 className="font-display text-xl font-semibold text-white sm:text-2xl">
-            Для кого <span className="text-neon-cyan">Vice City Adler</span>
+            Для кого <span className="text-neon-cyan">Topzol Adler</span>
           </h3>
         </Reveal>
 

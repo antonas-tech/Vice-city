@@ -1,5 +1,5 @@
 export const CLUB = {
-  name: "Vice City Adler",
+  name: "Topzol Adler",
   tagline: "Gaming Club · Adler",
   phone: "+7 (918) 638-20-10",
   phoneHref: "tel:+79186382010",
@@ -9,7 +9,7 @@ export const CLUB = {
   schedule: "24/7, каждый день",
   mapsHref:
     "https://yandex.ru/maps/?text=" +
-    encodeURIComponent("Адлер, ул. Бестужева 1/1 Vice City"),
+    encodeURIComponent("Адлер, ул. Бестужева 1/1 Topzol"),
 } as const;
 
 export const NAV_LINKS = [
@@ -365,7 +365,7 @@ export const FAQ: FaqItem[] = [
   },
   {
     question: "Клуб работает ночью?",
-    answer: "Да, Vice City Adler работает каждый день 24/7 — без перерывов и выходных.",
+    answer: "Да, Topzol Adler работает каждый день 24/7 — без перерывов и выходных.",
   },
   {
     question: "Можно прийти компанией?",

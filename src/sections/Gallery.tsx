@@ -8,7 +8,7 @@ export function Gallery() {
         <SectionTitle
           eyebrow="Галерея"
           title="Атмосфера клуба"
-          subtitle="Неон, море и полный фокус на игре. Загляните внутрь Vice City Adler."
+          subtitle="Неон, море и полный фокус на игре. Загляните внутрь Topzol Adler."
         />
         <GalleryGrid />
       </div>
