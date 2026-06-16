@@ -154,7 +154,7 @@ export function Hero() {
             variants={item}
             className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl"
           >
-            VICE CITY
+            TOPZOL
             <br />
             <span className="text-gradient drop-shadow-[0_0_30px_rgba(0,229,255,0.3)]">
               ADLER

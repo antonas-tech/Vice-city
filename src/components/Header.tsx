@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Phone, ShieldCheck, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { CLUB, NAV_LINKS } from "../data/site";
-import { AdminLoginModal } from "../admin/AdminLoginModal";
 import { Button } from "./Button";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [loginOpen, setLoginOpen] = useState(false);
   const [active, setActive] = useState("#hero");
 
   useEffect(() => {
@@ -52,9 +50,9 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#hero" className="group flex flex-col leading-none" aria-label="Vice City Adler — на главную">
+        <a href="#hero" className="group flex flex-col leading-none" aria-label="Topzol Adler — на главную">
           <span className="font-display text-lg font-bold tracking-wide text-white">
-            VICE<span className="text-gradient"> CITY</span>
+            TOP<span className="text-gradient">ZOL</span>
           </span>
           <span className="text-[10px] font-medium uppercase tracking-[0.35em] text-slate-500 transition-colors group-hover:text-neon-cyan">
             {CLUB.tagline}
@@ -91,15 +89,6 @@ export function Header() {
             <Phone className="h-4 w-4 text-neon-cyan" />
             {CLUB.phone}
           </a>
-          <button
-            type="button"
-            onClick={() => setLoginOpen(true)}
-            aria-label="Вход для администратора"
-            className="glass flex h-10 items-center gap-2 rounded-xl px-3.5 text-sm font-semibold text-slate-400 transition-all duration-300 hover:border-neon-purple/50 hover:text-neon-purple hover:shadow-glow-purple"
-          >
-            <ShieldCheck className="h-4 w-4" />
-            Administrator
-          </button>
           <Button href="#booking" size="md" magnetic>
             Забронировать
           </Button>
@@ -135,7 +124,7 @@ export function Header() {
           >
             <div className="flex h-[72px] items-center justify-between px-4 sm:px-6">
               <span className="font-display text-lg font-bold text-white">
-                VICE<span className="text-gradient"> CITY</span>
+                TOP<span className="text-gradient">ZOL</span>
               </span>
               <button
                 type="button"
@@ -184,25 +173,10 @@ export function Header() {
                   <Phone className="h-4 w-4" />
                   {CLUB.phone}
                 </Button>
-                <Button
-                  variant="ghost"
-                  size="lg"
-                  onClick={() => {
-                    setMenuOpen(false);
-                    setLoginOpen(true);
-                  }}
-                >
-                  <ShieldCheck className="h-4 w-4 text-neon-purple" />
-                  Administrator
-                </Button>
               </motion.div>
             </motion.nav>
           </motion.div>
         )}
-      </AnimatePresence>
-
-      <AnimatePresence>
-        {loginOpen && <AdminLoginModal onClose={() => setLoginOpen(false)} />}
       </AnimatePresence>
     </header>
   );
