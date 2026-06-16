@@ -51,7 +51,7 @@ export function Footer() {
             </a>
             <p className="flex items-start gap-2 text-sm text-slate-500">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-neon-pink" />
-              {CLUB.address}, {CLUB.addressNote}
+              {CLUB.address}
             </p>
             <p className="text-sm text-slate-500">{CLUB.schedule}</p>
           </div>

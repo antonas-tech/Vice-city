@@ -31,7 +31,7 @@ export function Contacts() {
                 </span>
                 <div>
                   <p className="font-semibold text-white">{CLUB.address}</p>
-                  <p className="text-sm text-slate-500">{CLUB.addressNote} · {CLUB.city}</p>
+                  <p className="text-sm text-slate-500">{CLUB.city}</p>
                 </div>
               </li>
               <li className="flex items-start gap-3.5">
@@ -117,7 +117,7 @@ export function Contacts() {
                   Topzol Adler
                 </p>
                 <p className="whitespace-nowrap text-center text-xs text-slate-400">
-                  ул. Бестужева 1/1, 2 этаж
+                  {CLUB.address}
                 </p>
               </div>
 
