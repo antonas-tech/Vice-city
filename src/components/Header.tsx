@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Phone, X } from "lucide-react";
 import { CLUB, NAV_LINKS } from "../data/site";
@@ -42,6 +43,7 @@ export function Header() {
   }, [menuOpen]);
 
   return (
+    <>
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
@@ -112,7 +114,9 @@ export function Header() {
           </button>
         </div>
       </div>
+    </header>
 
+    {createPortal(
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -120,7 +124,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-50 bg-night-950/95 backdrop-blur-2xl lg:hidden"
+            className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-night-950 lg:hidden"
           >
             <div className="flex h-[72px] items-center justify-between px-4 sm:px-6">
               <span className="font-display text-lg font-bold text-white">
@@ -177,7 +181,9 @@ export function Header() {
             </motion.nav>
           </motion.div>
         )}
-      </AnimatePresence>
-    </header>
+      </AnimatePresence>,
+      document.body
+    )}
+    </>
   );
 }
